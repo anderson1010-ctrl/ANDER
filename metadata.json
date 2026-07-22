@@ -1,0 +1,6 @@
+{
+  "name": "PetRescue",
+  "description": "Tu plataforma de confianza para encontrar, adoptar y ayudar a mascotas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

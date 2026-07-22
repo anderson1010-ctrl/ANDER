@@ -1,5 +1,7 @@
 # ANDER - Pet Adoption & Lost Pets 🐾
 
+[![CI](https://github.com/anderson1010-ctrl/ANDER/actions/workflows/ci.yml/badge.svg)](https://github.com/anderson1010-ctrl/ANDER/actions/workflows/ci.yml)
+
 Aplicación web para buscar, adoptar y reportar mascotas perdidas. Construida con React 19, TypeScript, Vite y un backend Express + MySQL.
 
 ## Funcionalidades

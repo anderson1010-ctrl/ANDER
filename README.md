@@ -49,6 +49,27 @@ El servidor Express en `server/index.js` crea la base de datos y tablas necesari
 - `npm run build` — genera el build de producción
 - `npm run preview` — sirve el build de producción localmente
 - `npm run lint` — verifica tipos con TypeScript
+- `npm start` — construye el frontend y levanta el servidor Express
+
+## Despliegue en Render
+
+Este proyecto está preparado para desplegarse en Render como un servicio Node.js full-stack.
+
+1. Conecta el repositorio `https://github.com/anderson1010-ctrl/ANDER` a Render.
+2. Selecciona `Node` como entorno de ejecución.
+3. En la configuración del servicio usa:
+   - Build command: `npm install && npm run build`
+   - Start command: `npm run server`
+4. Agrega estas variables de entorno en Render:
+   - `DB_HOST`
+   - `DB_PORT`
+   - `DB_USER`
+   - `DB_PASSWORD`
+   - `DB_NAME`
+   - `FRONTEND_ORIGIN` (opcional)
+5. Deploy automático se activará al hacer push a `main`.
+
+También se incluye un archivo `render.yaml` para que Render detecte la configuración automáticamente.
 
 ## Notas
 

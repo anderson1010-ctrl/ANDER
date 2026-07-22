@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import path from 'path';
 import { createDatabaseIfNeeded, getPool } from './db.js';
 import { ADOPTION_PETS, LOST_REPORTS } from './seedData.js';
 
@@ -23,6 +24,7 @@ app.use(
   })
 );
 app.use(express.json({ limit: '10mb' }));
+app.use(express.static(path.join(process.cwd(), 'dist')));
 
 function mapPetRow(row) {
   return {
@@ -295,6 +297,14 @@ app.post('/api/reports', async (req, res) => {
 
 app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok' });
+});
+
+app.get('*', (req, res) => {
+  if (req.method === 'GET' && !req.path.startsWith('/api')) {
+    res.sendFile(path.join(process.cwd(), 'dist', 'index.html'));
+  } else {
+    res.status(404).json({ message: 'Not found' });
+  }
 });
 
 async function startServer() {
